@@ -4,28 +4,45 @@
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  background-color: rgb(230, 230, 230);
+  background-color: #fff;
   width: 900px;
   height: 500px;
   border-radius: 30px;
+  box-shadow: 0 0 10px #808080;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 // Title //
-h1 {
-  margin-top: 0;
+.title {
+  margin: 0 0 5% 0;
   text-align: center;
   font-weight: 300;
   font-size: 3em;
-  margin-bottom: 5%;
+  color: rgba(0,0,0,.54);
+}
+
+.coin-block {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // Choosing coins - circles //
 .choose-coins {
   width: 10%;
   display: inline-block;
+  border: solid 2px #fff;
   border-radius: 50%;
   align-items: center;
-  margin: 0 25px;
+  margin: 0 20px;
+  box-shadow: 0 0 10px rgb(200, 200, 200);
+  cursor: pointer;
 }
 
 .choose-coins img {
@@ -33,43 +50,15 @@ h1 {
   width: 100%;
 }
 
-.click-country {
-  border-radius: 50%;
-}
-
-.coin-over {
-  transition: .5s ease;
-  opacity: 0;
-  position: relative;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
 // Hover choosing coins //
-.choose-coins:hover .country {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.choose-coins:hover .coin-over {
-  opacity: 1;
-}
-
-// Text into Hover //
-.coin-symbol {
-  width: 100%;
-  border-radius: 50%;
+.choose-coins:hover, .choose-coins:target {
+  width: 150px;
 }
 
 .choose-coins input {
   border: none;
   text-decoration: none;
   width: 15px;
-}
-
-.form {
-  // background-color: yellow;
-
 }
 
 .form-field {
@@ -87,5 +76,5 @@ h1 {
 
 .form-field input {
   font-size: 2em;
-  margin-top: 10px;
+  margin-top: 15px;
 }
