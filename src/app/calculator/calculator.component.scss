@@ -61,6 +61,14 @@
   width: 15px;
 }
 
+.form span {
+  width: 60px;
+  height: 20px;
+  padding: 3px;
+  display: inline-block;
+  font-size: 2em;
+}
+
 .form-field {
   width: 300px;
   margin-top: 30px;
@@ -72,6 +80,7 @@
 
 .gap {
   margin: 0 20px;
+  font-size: 2em;
 }
 
 .form-field input {
