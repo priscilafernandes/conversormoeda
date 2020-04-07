@@ -28,7 +28,7 @@ export class CalculatorComponent implements OnInit {
   australianDollar = 3.23
   canadianDollar = 3.72
 
-  // Funções dos botões//
+  // Functions on Buttons //
   onDollar(event) {
     this.CountryChoose = 'Dólar Americano'
     this.intercoin = this.coinDefaultValue
@@ -55,7 +55,7 @@ export class CalculatorComponent implements OnInit {
     this.brcoin = this.australianDollar.toFixed(2)
   }
 
-  // Switch case  //
+  // Switch case  with coins by Input //
   onChangeInterCoin(event) {
     this.intercoin = event.target.value
     let multiply

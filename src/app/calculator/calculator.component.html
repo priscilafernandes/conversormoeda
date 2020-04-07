@@ -1,31 +1,28 @@
 <div class="main-content">
   <div class="content">
-    <h1>Conversor de moedas</h1>
+    <h1 class="title">Conversor de Moedas</h1>
 
-    <div class="choose-coins" (click)="onDollar($event)">
-      <img class="country" src="../../assets/usa.png" alt="Dollar">
-      <div class="coin-over"></div>
-    </div>
+    <nav class="coin-block">
+      <a id='dollar' href="#dollar" class="choose-coins" (click)="onDollar($event)">
+        <img class="country" src="../../assets/usa.png" alt="Dollar">
+      </a>
 
-    <div class="choose-coins" (click)="onAustralianDollar($event)">
-      <img class="country" src="../../assets/australia.png" alt="Australian Dollar">
-      <div class="coin-over"></div>
-    </div>
+      <a id='australianDollar' href='#australianDollar' class="choose-coins" (click)="onAustralianDollar($event)">
+        <img class="country" src="../../assets/australia.png" alt="Australian Dollar">
+      </a>
 
-    <div class="choose-coins" (click)="onCanadianDollar($event)">
-      <img class="country" src="../../assets/canada.png" alt="Canadian Dollar">
-      <div class="coin-over"></div>
-    </div>
+      <a id='canadianDollar' href='#canadianDollar' class="choose-coins" (click)="onCanadianDollar($event)">
+        <img class="country" src="../../assets/canada.png" alt="Canadian Dollar">
+      </a>
 
-    <div class="choose-coins" (click)="onEuro($event)">
-      <img class="country" src="../../assets/euro.png" alt="Euro">
-      <div class="coin-over"></div>
-    </div>
+      <a id='euro' href='#euro' class="choose-coins" (click)="onEuro($event)">
+        <img class="country" src="../../assets/euro.png" alt="Euro">
+      </a>
 
-    <div class="choose-coins" (click)="onPound($event)">
-      <img class="country" src="../../assets/uk.png" alt="Pound">
-      <div class="coin-over"></div>
-    </div>
+      <a id='pound' href='#pound' class="choose-coins" (click)="onPound($event)">
+        <img class="country" src="../../assets/uk.png" alt="Pound">
+      </a>
+    </nav>
 
     <form class="form">
       <mat-form-field class="form-field">
