@@ -1,26 +1,36 @@
 <div class="main-content">
 
     <h1>Conversor de moedas</h1>
-
-    <div class="choose-coins">
+    
+    <div class="choose-coins" (click)="onDollar($event)">
         <img class="country" src="../../assets/usa.png" alt="Dollar">
         <div class="coin-over"></div>
     </div>
 
-    <div class="choose-coins">
+    <div class="choose-coins" (click)="onEuro($event)">
         <img class="country" src="../../assets/euro.png" alt="Euro">
         <div class="coin-over"></div>
     </div>
 
-    <div class="choose-coins">
+    <div class="choose-coins" (click)="onPound($event)">
         <img class="country" src="../../assets/uk.png" alt="Pound">
         <div class="coin-over"></div>
     </div>
 
+    <div class="choose-coins" (click)="onAustralianDollar($event)">
+        <img class="country" src="../../assets/australia.png" alt="Australian Dollar">
+        <div class="coin-over"></div>
+    </div>
+
+    <div class="choose-coins" (click)="onCanadianDollar($event)">
+        <img class="country" src="../../assets/canada.png" alt="Canadian Dollar">
+        <div class="coin-over"></div>
+    </div>
+
     <div class="">
-        <input type="text" name="coin-value" id="">
+        <input type="text" name="coin-value" id="" (change)="onChangeCountry($event)" value="{{input1}}">
         <label for="coin"> From </label>
-        <input type="text" name="change-value" id="">
+        <input type="text" name="change-value" id="" (change)="onChangeCoin($event)" value="{{input2}}">
     </div>
 
 </div>
