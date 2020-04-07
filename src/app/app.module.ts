@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button'
-import { MatMenuModule } from '@angular/material/menu'
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { MatMenuModule } from '@angular/material/menu'
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
-    
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

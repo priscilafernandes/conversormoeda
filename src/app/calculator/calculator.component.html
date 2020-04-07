@@ -1,56 +1,44 @@
 <div class="main-content">
-
+  <div class="content">
     <h1>Conversor de moedas</h1>
-    
+
     <div class="choose-coins" (click)="onDollar($event)">
-        <img class="country" src="../../assets/usa.png" alt="Dollar">
-        <div class="coin-over"></div>
-    </div>
-
-    <div class="choose-coins" (click)="onEuro($event)">
-        <img class="country" src="../../assets/euro.png" alt="Euro">
-        <div class="coin-over"></div>
-    </div>
-
-    <div class="choose-coins" (click)="onPound($event)">
-        <img class="country" src="../../assets/uk.png" alt="Pound">
-        <div class="coin-over"></div>
+      <img class="country" src="../../assets/usa.png" alt="Dollar">
+      <div class="coin-over"></div>
     </div>
 
     <div class="choose-coins" (click)="onAustralianDollar($event)">
-        <img class="country" src="../../assets/australia.png" alt="Australian Dollar">
-        <div class="coin-over"></div>
+      <img class="country" src="../../assets/australia.png" alt="Australian Dollar">
+      <div class="coin-over"></div>
     </div>
 
     <div class="choose-coins" (click)="onCanadianDollar($event)">
-        <img class="country" src="../../assets/canada.png" alt="Canadian Dollar">
-        <div class="coin-over"></div>
+      <img class="country" src="../../assets/canada.png" alt="Canadian Dollar">
+      <div class="coin-over"></div>
     </div>
 
-    <div class="">
-        
-        <div>
-            <span>{{CountryChoose}}</span>
-        </div>
-
-        <input type="text" name="coin-value" id="" (keyup)="onChangeInterCoin($event)" value="{{intercoin}}">
-        <label for="coin"> From </label>
-        <input type="text" name="change-value" id="" (keyup)="onChangeBrCoin($event)" value="{{brcoin}}">
-
+    <div class="choose-coins" (click)="onEuro($event)">
+      <img class="country" src="../../assets/euro.png" alt="Euro">
+      <div class="coin-over"></div>
     </div>
 
+    <div class="choose-coins" (click)="onPound($event)">
+      <img class="country" src="../../assets/uk.png" alt="Pound">
+      <div class="coin-over"></div>
+    </div>
+
+    <form class="form">
+      <mat-form-field class="form-field">
+        <mat-label class="form-label">{{ CountryChoose }}</mat-label>
+        <input matInput #message (keyup)="onChangeInterCoin($event)" value="{{intercoin}}">
+      </mat-form-field>
+
+      <label class="form-label gap">para</label>
+
+      <mat-form-field class="form-field">
+        <mat-label class="form-label">Real</mat-label>
+        <input matInput #message (keyup)="onChangeBrCoin($event)" value="{{brcoin}}">
+      </mat-form-field>
+    </form>
+  </div>
 </div>
-
-<!-- <div class="coins">
-        <span class="span-coin">
-            <img src="../../assets/usa.png" alt="">
-            <input type="text" class="dollar" placeholder="USS 5,25">
-        </span>
-
-        <p>From</p>
-
-        <span class="span-coin">
-            <img src="../../assets/brasil.png" alt="">
-            <input type="number" class="real" placeholder="R$ 1,00">
-        </span>
-    </div> -->
