@@ -28,9 +28,15 @@
     </div>
 
     <div class="">
-        <input type="text" name="coin-value" id="" (change)="onChangeInput1($event)" value="{{input1}}">
+        
+        <div>
+            <span>{{CountryChoose}}</span>
+        </div>
+
+        <input type="text" name="coin-value" id="" (keyup)="onChangeInterCoin($event)" value="{{intercoin}}">
         <label for="coin"> From </label>
-        <input type="text" name="change-value" id="" (change)="onChangeInput2($event)" value="{{input2}}">
+        <input type="text" name="change-value" id="" (keyup)="onChangeBrCoin($event)" value="{{brcoin}}">
+
     </div>
 
 </div>
