@@ -15,12 +15,12 @@ export class CalculatorComponent implements OnInit {
     this.brcoin = this.dollar.toFixed(2)
     this.CountryChoose = 'Dólar Americano'
   }
+  // Variáveis que armazenam dados do Input //
   intercoin
   brcoin
 
   formatter: any
   CountryChoose = ''
-
   coinDefaultValue = (1.00).toFixed(2)
   euro = 5.68
   dollar = 5.20
@@ -28,44 +28,68 @@ export class CalculatorComponent implements OnInit {
   australianDollar = 3.23
   canadianDollar = 3.72
 
-  //
+  // Funções dos botões//
   onDollar(event) {
+    this.CountryChoose = 'Dólar Americano'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.dollar.toFixed(2)
-    this.CountryChoose = 'Dólar Americano'
   }
   onEuro(event) {
+    this.CountryChoose = 'Euro'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.euro.toFixed(2)
-    this.CountryChoose = 'Euro'
   }
   onPound(event) {
+    this.CountryChoose = 'Libra'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.pound.toFixed(2)
-    this.CountryChoose = 'Libra'
   }
   onCanadianDollar(event) {
+    this.CountryChoose = 'Dólar Canadense'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.canadianDollar.toFixed(2)
-    this.CountryChoose = 'Dólar Canadense'
   }
   onAustralianDollar(event) {
+    this.CountryChoose = 'Dólar Australiano'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.australianDollar.toFixed(2)
-    this.CountryChoose = 'Dólar Australiano'
   }
-  // Change Coins //
+
+  // Switch case  //
   onChangeInterCoin(event) {
     this.intercoin = event.target.value
-    let multiply = this.intercoin * this.brcoin
+    let multiply
+    switch (this.CountryChoose) {
+      case 'Dólar Americano':
+        multiply = this.intercoin * this.dollar
+        console.log(this.intercoin);
+        break;
+      case 'Euro':
+        multiply = this.intercoin * this.euro
+        break;
+      case 'Libra':
+        multiply = this.intercoin * this.pound
+        break;
+      case 'Dólar Canadense':
+        multiply = this.intercoin * this.canadianDollar
+        break;
+      case 'Dólar Australiano':
+        multiply = this.intercoin * this.australianDollar
+        break;
+
+      default:
+        break;
+    }
     this.brcoin = multiply.toFixed(2)
   }
+  //------------------------------------------
   onChangeBrCoin(event) {
     this.brcoin = event.target.value
     let divider
     switch (this.CountryChoose) {
       case 'Dólar Americano':
         divider = this.brcoin / this.dollar
+        console.log(this.brcoin);
         break;
       case 'Euro':
         divider = this.brcoin / this.euro
@@ -80,10 +104,9 @@ export class CalculatorComponent implements OnInit {
         divider = this.brcoin / this.australianDollar
         break;
 
-      default:
+      default: 'Dólaar Americano'
         break;
     }
-
     this.intercoin = divider.toFixed(2)
   }
 }
