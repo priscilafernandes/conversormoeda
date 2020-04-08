@@ -7,7 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
-import { CurrencyPipe } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
+import { CurrencyConversionService } from './currency-conversion.service';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +22,10 @@ import { CurrencyPipe } from '@angular/common';
     MatButtonModule,
     MatMenuModule,
     MatInputModule,
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [CurrencyConversionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
