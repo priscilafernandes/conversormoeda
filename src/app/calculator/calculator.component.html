@@ -25,13 +25,15 @@
     </nav>
 
     <form class="form">
-      <span>{{SignChoose}}</span>
+      <span>{{ SignChoose }}</span>
       <mat-form-field class="form-field">
         <mat-label class="form-label">{{ CountryChoose }}</mat-label>
         <input matInput #message (keyup)="onChangeInterCoin($event)" value="{{intercoin}}">
       </mat-form-field>
+
       <label class="form-label gap">para</label>
-      <span>{{SignFix}}</span>
+
+      <span>{{ SignFix }}</span>
       <mat-form-field class="form-field">
         <mat-label class="form-label">Real</mat-label>
         <input matInput #message (keyup)="onChangeBrCoin($event)" value="{{brcoin}}">

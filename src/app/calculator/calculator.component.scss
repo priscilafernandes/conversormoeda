@@ -63,10 +63,10 @@
 
 .form span {
   width: 60px;
-  height: 20px;
   padding: 3px;
   display: inline-block;
   font-size: 2em;
+  color: rgba(0,0,0,.54);
 }
 
 .form-field {
@@ -79,11 +79,10 @@
 }
 
 .gap {
-  margin: 0 20px;
-  font-size: 2em;
+  margin: 0 0 0 15px;
 }
 
 .form-field input {
-  font-size: 2em;
+  font-size: 3em;
   margin-top: 15px;
 }
