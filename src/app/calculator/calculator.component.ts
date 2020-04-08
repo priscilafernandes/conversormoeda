@@ -51,7 +51,7 @@ export class CalculatorComponent implements OnInit {
     this.CountryChoose = 'Dólar Americano'
     this.SignSpan = 'US$'
     this.intercoin = this.coinDefaultValue
-    this.brcoin = this.dollar.toFixed(2)  
+    this.brcoin = this.dollar.toFixed(2)
   }
   onEuro(event) {
     this.CountryChoose = 'Euro'
