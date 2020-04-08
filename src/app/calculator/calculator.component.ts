@@ -35,13 +35,16 @@ export class CalculatorComponent implements OnInit {
   //Função Api //
 
   rates:any
+  entries:any
+  keys:any
+  values:any
   getCoin(){
-    this.currency.getCurrency('USD').subscribe( 
+    let coin;
+    this.currency.getCurrency('USD').subscribe(
       (data) => {
-      new Object(data)
-      console.log(data)
-      
-    })
+        coin = new Object(data)
+        console.log(coin.rates)
+      });
   }
   // Funções dos botões //
   onDollar(event) {
