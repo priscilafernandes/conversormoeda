@@ -15,7 +15,7 @@ export class CalculatorComponent implements OnInit {
     this.brcoin = this.dollar.toFixed(2)
     this.CountryChoose = 'Dólar Americano'
     this.SignSpan = 'US$'
-    this.getCoin()
+   
   }
   // Variáveis que armazenam dados do Input //
   intercoin
@@ -34,48 +34,52 @@ export class CalculatorComponent implements OnInit {
 
   //Função Api //
 
-  rates:any
-  entries:any
-  keys:any
-  values:any
-  getCoin(){
+  
+  getCoin(base, money){
     let coin;
-    this.currency.getCurrency('USD').subscribe(
+    this.currency.getCurrency(base).subscribe(
       (data) => {
         coin = new Object(data)
-        console.log(coin.rates)
+        //console.log(coin.rates)
+        return coin.rates[money]
       });
-  }
+    }
   // Funções dos botões //
   onDollar(event) {
     this.CountryChoose = 'Dólar Americano'
     this.SignSpan = 'US$'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.dollar.toFixed(2)  
+    console.log(this.getCoin('USD', 'USD'));
+    this.getCoin('USD', 'USD')
   }
   onEuro(event) {
     this.CountryChoose = 'Euro'
     this.SignSpan = '€'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.euro.toFixed(2)
+    // this.getCoin('EUR')
   }
   onPound(event) {
     this.CountryChoose = 'Libra'
     this.SignSpan = '£'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.pound.toFixed(2)
+    // this.getCoin('GBP')
   }
   onCanadianDollar(event) {
     this.CountryChoose = 'Dólar Canadense'
     this.SignSpan = 'CA$'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.canadianDollar.toFixed(2)
+    // this.getCoin('CAD')
   }
   onAustralianDollar(event) {
     this.CountryChoose = 'Dólar Australiano'
     this.SignSpan = 'AU$'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.australianDollar.toFixed(2)
+    // this.getCoin('AUD')
   }
 
   // Switch case  para cada opção de moeda //
