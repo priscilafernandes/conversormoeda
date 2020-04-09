@@ -17,7 +17,6 @@ export class CalculatorComponent implements OnInit {
   SignSpan = ''
   SignFix = 'R$'
   coinDefaultValue = (1.00).toFixed(2)
-
   // moedas
   dollar: number = 0
   australianDollar: number = 0
@@ -51,7 +50,6 @@ export class CalculatorComponent implements OnInit {
       console.log(this.coin)
     })
   }
-
   // Funções dos botões //
   onDollar(event) {
     this.CountryChoose = 'Dólar Americano'
@@ -82,6 +80,7 @@ export class CalculatorComponent implements OnInit {
     this.SignSpan = '€'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.euro.toFixed(2)
+    // this.getCoin('EUR')
     this.getCoin('EUR')
   }
 
@@ -90,7 +89,7 @@ export class CalculatorComponent implements OnInit {
     this.SignSpan = '£'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.pound.toFixed(2)
-    this.getCoin('GBP')
+    // this.getCoin('GBP')
   }
 
   // Switch case  para cada opção de moeda //
