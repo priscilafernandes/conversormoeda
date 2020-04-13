@@ -1,31 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyConversionService } from '../currency-conversion.service'
+import { CurrencyConversionService } from '../currency-conversion.service';
 
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss']
 })
+
 export class CalculatorComponent implements OnInit {
 
-  constructor(private currency: CurrencyConversionService) { }
-  //Valor Inicial setado //
-  ngOnInit(): void {
-    this.getCoin("USD")
-    this.CountryChoose = 'Dólar Americano'
-    this.SignSpan = 'US$'
-    this.intercoin = this.coinDefaultValue
-    this.brcoin = this.dollar.toFixed(2)
-  }
   // Variáveis que armazenam dados do Input //
   intercoin
   brcoin
-
+  coin: any;
+  initCoin: any;
   formatter: any
   CountryChoose = ''
   SignSpan = ''
   SignFix = 'R$'
   coinDefaultValue = (1.00).toFixed(2)
+
   // moedas
   dollar: number = 0
   australianDollar: number = 0
@@ -33,22 +27,61 @@ export class CalculatorComponent implements OnInit {
   euro: number = 0
   pound: number = 0
 
+  initDollar: number = 0
+  initAustralianDollar: number = 0
+  initCanadianDollar: number = 0
+  initEuro: number = 0
+  initPound: number = 0
+
+  constructor(private currency: CurrencyConversionService) { }
+
   //Valor Inicial setado //
+  ngOnInit(): void {
+    // this.getCoin('USD')
+    this.CountryChoose = 'Dólar Americano'
+    this.SignSpan = 'US$'
+    this.intercoin = this.coinDefaultValue
+    this.brcoin = this.dollar.toFixed(2)
+    this.initCurrency()
+  }
+
+  initCurrency(){
+    this.currency.getCurrency('USD').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initDollar = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('AUD').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initAustralianDollar = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('CAD').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initCanadianDollar = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('EUR').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initEuro = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('GBP').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initPound = this.initCoin.rates.BRL.toFixed(2)
+    })
+  }
 
 
   //Função Api //
   getCoin(base: string) {
     this.currency.getCurrency(base).subscribe((data) => {
-      let coin = new Object(data);
+      this.coin = new Object(data);
 
-      this.dollar = coin.rates.BRL
-      this.australianDollar = coin.rates.BRL
-      this.canadianDollar = coin.rates.BRL
-      this.euro = coin.rates.BRL
-      this.pound = coin.rates.BRL
-      this.brcoin = coin.rates.BRL.toFixed(2)
+      this.dollar = this.coin.rates.BRL
+      this.australianDollar = this.coin.rates.BRL
+      this.canadianDollar = this.coin.rates.BRL
+      this.euro = this.coin.rates.BRL
+      this.pound = this.coin.rates.BRL
+      this.brcoin = this.coin.rates.BRL.toFixed(2)
 
-      console.log(coin)
+      console.log(this.coin)
     })
   }
   // Funções dos botões //
@@ -57,7 +90,7 @@ export class CalculatorComponent implements OnInit {
     this.SignSpan = 'US$'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.dollar.toFixed(2)
-    this.getCoin("USD")
+    this.getCoin('USD')
   }
 
   onAustralianDollar(event) {
@@ -81,7 +114,6 @@ export class CalculatorComponent implements OnInit {
     this.SignSpan = '€'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.euro.toFixed(2)
-    // this.getCoin('EUR')
     this.getCoin('EUR')
   }
 
@@ -90,17 +122,17 @@ export class CalculatorComponent implements OnInit {
     this.SignSpan = '£'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.pound.toFixed(2)
-    // this.getCoin('GBP')
+    this.getCoin('GBP')
   }
- 
+
   // Switch case  para cada opção de moeda //
   onChangeInterCoin(event) {
     this.intercoin = event.target.value
-    let multiply
+    let multiply;
+
     switch (this.CountryChoose) {
       case 'Dólar Americano':
         multiply = this.intercoin * this.dollar
-        console.log(this.intercoin);
         break;
       case 'Euro':
         multiply = this.intercoin * this.euro
@@ -115,15 +147,17 @@ export class CalculatorComponent implements OnInit {
         multiply = this.intercoin * this.australianDollar
         break;
     }
+
     this.brcoin = multiply.toFixed(2)
   }
+
   onChangeBrCoin(event) {
     this.brcoin = event.target.value
-    let divider
+    let divider;
+
     switch (this.CountryChoose) {
       case 'Dólar Americano':
         divider = this.brcoin / this.dollar
-        console.log(this.brcoin);
         break;
       case 'Euro':
         divider = this.brcoin / this.euro
@@ -138,6 +172,7 @@ export class CalculatorComponent implements OnInit {
         divider = this.brcoin / this.australianDollar
         break;
     }
+
     this.intercoin = divider.toFixed(2)
   }
 }

@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http'
 import { CurrencyConversionService } from './currency-conversion.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +22,6 @@ import { CurrencyConversionService } from './currency-conversion.service';
     MatMenuModule,
     MatInputModule,
     HttpClientModule,
-    
   ],
   providers: [CurrencyConversionService],
   bootstrap: [AppComponent]
