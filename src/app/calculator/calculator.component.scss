@@ -1,0 +1,88 @@
+// Main Content //
+.main-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 900px;
+  height: 500px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #808080;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Title //
+.title {
+  margin: 0 0 5% 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 3em;
+  color: rgba(0,0,0,.54);
+}
+
+.coin-block {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Choosing coins - circles //
+.choose-coins {
+  width: 10%;
+  display: inline-block;
+  border: solid 2px #fff;
+  border-radius: 50%;
+  align-items: center;
+  margin: 0 20px;
+  box-shadow: 0 0 10px rgb(200, 200, 200);
+  cursor: pointer;
+}
+
+.choose-coins img {
+  display: block;
+  width: 100%;
+}
+
+// Hover choosing coins //
+.choose-coins:hover, .choose-coins:target {
+  width: 150px;
+}
+
+.choose-coins input {
+  border: none;
+  text-decoration: none;
+  width: 15px;
+}
+
+.form span {
+  width: 60px;
+  padding: 3px;
+  display: inline-block;
+  font-size: 2em;
+  color: rgba(0,0,0,.54);
+}
+
+.form-field {
+  width: 300px;
+  margin-top: 30px;
+}
+
+.form-label {
+  font-size: 1.5em;
+}
+
+.gap {
+  margin: 0 0 0 15px;
+}
+
+.form-field input {
+  font-size: 3em;
+  margin-top: 15px;
+}
