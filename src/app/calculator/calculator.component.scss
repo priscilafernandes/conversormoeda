@@ -33,8 +33,10 @@
   align-items: center;
 }
 
+
 // Choosing coins - circles //
 .choose-coins {
+  position: relative;
   width: 10%;
   display: inline-block;
   border: solid 2px #fff;
@@ -45,10 +47,40 @@
   cursor: pointer;
 }
 
+// Init coins - circles//
+.init-coins{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color:white;
+  font-size: 20px;
+  opacity: 50%;
+  border-radius: 50%;
+
+}
+
+.init-coins-text{
+  opacity: 100%;
+  margin: 0;
+  z-index: 1;
+}
+
+// .init-coins:hover, .init-coins:target {
+//   width: 150px;
+// }
+
+//fim init coins//
+
+
 .choose-coins img {
   display: block;
   width: 100%;
 }
+
 
 // Hover choosing coins //
 .choose-coins:hover, .choose-coins:target {

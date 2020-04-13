@@ -45,6 +45,7 @@ export class CalculatorComponent implements OnInit {
     this.initCurrency()
   }
 
+  
   initCurrency(){
     this.currency.getCurrency('USD').subscribe((data) => {
       this.initCoin = new Object(data);
