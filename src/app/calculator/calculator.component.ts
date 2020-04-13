@@ -35,6 +35,10 @@ export class CalculatorComponent implements OnInit {
     this.brcoin = this.dollar.toFixed(2)
   }
 
+  initCurrency() {
+
+  }
+
   //Função Api //
   getCoin(base: string) {
     this.currency.getCurrency(base).subscribe((data) => {
@@ -80,7 +84,6 @@ export class CalculatorComponent implements OnInit {
     this.SignSpan = '€'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.euro.toFixed(2)
-    // this.getCoin('EUR')
     this.getCoin('EUR')
   }
 
@@ -89,7 +92,7 @@ export class CalculatorComponent implements OnInit {
     this.SignSpan = '£'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.pound.toFixed(2)
-    // this.getCoin('GBP')
+    this.getCoin('GBP')
   }
 
   // Switch case  para cada opção de moeda //
