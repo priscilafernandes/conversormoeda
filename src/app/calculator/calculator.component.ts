@@ -8,7 +8,6 @@ import { CurrencyConversionService } from '../currency-conversion.service';
 })
 
 export class CalculatorComponent implements OnInit {
-
   // Variáveis que armazenam dados do Input //
   intercoin
   brcoin
@@ -37,15 +36,14 @@ export class CalculatorComponent implements OnInit {
 
   //Valor Inicial setado //
   ngOnInit(): void {
-    // this.getCoin('USD')
+    this.getCoin('USD')
+    this.initCurrency()
     this.CountryChoose = 'Dólar Americano'
     this.SignSpan = 'US$'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.dollar.toFixed(2)
-    this.initCurrency()
   }
 
-  
   initCurrency(){
     this.currency.getCurrency('USD').subscribe((data) => {
       this.initCoin = new Object(data);

@@ -3,38 +3,38 @@
     <h1 class="title">Conversor de Moedas</h1>
 
     <nav class="coin-block">
-      
+
       <a id='dollar' href="#dollar" class="choose-coins" (click)="onDollar($event)">
         <div class="init-coins">
-          <p class="init-coins-text">{{initDollar | currency: 'USD'}}</p>
-          </div>
+          <p class="init-coins-text">{{initDollar | currency: 'BRL'}}</p>
+        </div>
         <img class="country" src="../../assets/usa.png" alt="Dollar">
       </a>
-      
+
       <a id='australianDollar' href='#australianDollar' class="choose-coins" (click)="onAustralianDollar($event)">
         <div class="init-coins">
-          <p class="init-coins-text">{{initAustralianDollar | currency: 'AUD'}}</p>
+          <p class="init-coins-text">{{initAustralianDollar | currency: 'BRL'}}</p>
         </div>
         <img class="country" src="../../assets/australia.png" alt="Australian Dollar">
       </a>
 
       <a id='canadianDollar' href='#canadianDollar' class="choose-coins" (click)="onCanadianDollar($event)">
         <div class="init-coins">
-          <p class="init-coins-text">{{initCanadianDollar | currency: 'CAD'}}</p>
-        </div>  
+          <p class="init-coins-text">{{initCanadianDollar | currency: 'BRL'}}</p>
+        </div>
         <img class="country" src="../../assets/canada.png" alt="Canadian Dollar">
       </a>
 
       <a id='euro' href='#euro' class="choose-coins" (click)="onEuro($event)">
         <div class="init-coins">
-          <p class="init-coins-text">{{initEuro | currency: 'EUR'}}</p>
+          <p class="init-coins-text">{{initEuro | currency: 'BRL'}}</p>
         </div>
         <img class="country" src="../../assets/euro.png" alt="Euro">
       </a>
 
       <a id='pound' href='#pound' class="choose-coins" (click)="onPound($event)">
         <div class="init-coins">
-          <p class="init-coins-text">{{initPound | currency: 'GBP'}}</p>
+          <p class="init-coins-text">{{initPound | currency: 'BRL'}}</p>
         </div>
         <img class="country" src="../../assets/uk.png" alt="Pound">
       </a>

@@ -1,3 +1,6 @@
+$color-primary: rgba(0, 0, 0, 0.54);
+$color-highlight: #3f51b5;
+
 // Main Content //
 .main-content {
   display: flex;
@@ -8,7 +11,6 @@
   width: 900px;
   height: 500px;
   border-radius: 30px;
-  box-shadow: 0 0 10px #808080;
 }
 
 .content {
@@ -23,7 +25,7 @@
   text-align: center;
   font-weight: 300;
   font-size: 3em;
-  color: rgba(0,0,0,.54);
+  color: $color-primary;
 }
 
 .coin-block {
@@ -32,7 +34,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 // Choosing coins - circles //
 .choose-coins {
@@ -48,43 +49,47 @@
 }
 
 // Init coins - circles//
-.init-coins{
+.init-coins {
   position: absolute;
-  height: 100%;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color:white;
-  font-size: 20px;
-  opacity: 50%;
-  border-radius: 50%;
-
 }
 
-.init-coins-text{
-  opacity: 100%;
+.init-coins-text {
+  width: 100%;
   margin: 0;
-  z-index: 1;
+  font-size: 18px;
+  color: $color-primary;
+  background-color: #fff;
+  padding: 2px;
+  border-bottom: 1px solid $color-primary;
+  box-shadow: 0 0 10px $color-primary;
 }
-
-// .init-coins:hover, .init-coins:target {
-//   width: 150px;
-// }
-
-//fim init coins//
-
 
 .choose-coins img {
   display: block;
   width: 100%;
 }
 
-
 // Hover choosing coins //
-.choose-coins:hover, .choose-coins:target {
+.choose-coins:hover {
   width: 150px;
+
+  .init-coins-text {
+    font-size: 25px;
+    padding: 5px;
+  }
+}
+
+.choose-coins:target {
+  width: 150px;
+
+  .init-coins-text {
+    display: none;
+  }
 }
 
 .choose-coins input {
@@ -98,7 +103,7 @@
   padding: 3px;
   display: inline-block;
   font-size: 2em;
-  color: rgba(0,0,0,.54);
+  color: $color-primary;
 }
 
 .form-field {
