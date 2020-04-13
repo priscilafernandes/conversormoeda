@@ -8,15 +8,18 @@ import { CurrencyConversionService } from '../currency-conversion.service';
 })
 
 export class CalculatorComponent implements OnInit {
+
   // Variáveis que armazenam dados do Input //
   intercoin
   brcoin
   coin: any;
+  initCoin: any;
   formatter: any
   CountryChoose = ''
   SignSpan = ''
   SignFix = 'R$'
   coinDefaultValue = (1.00).toFixed(2)
+
   // moedas
   dollar: number = 0
   australianDollar: number = 0
@@ -24,19 +27,45 @@ export class CalculatorComponent implements OnInit {
   euro: number = 0
   pound: number = 0
 
+  initDollar: number = 0
+  initAustralianDollar: number = 0
+  initCanadianDollar: number = 0
+  initEuro: number = 0
+  initPound: number = 0
+
   constructor(private currency: CurrencyConversionService) { }
 
   //Valor Inicial setado //
   ngOnInit(): void {
-    this.getCoin('USD')
+    // this.getCoin('USD')
     this.CountryChoose = 'Dólar Americano'
     this.SignSpan = 'US$'
     this.intercoin = this.coinDefaultValue
     this.brcoin = this.dollar.toFixed(2)
+    this.initCurrency()
   }
 
-  initCurrency() {
-
+  initCurrency(){
+    this.currency.getCurrency('USD').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initDollar = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('AUD').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initAustralianDollar = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('CAD').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initCanadianDollar = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('EUR').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initEuro = this.initCoin.rates.BRL.toFixed(2)
+    })
+    this.currency.getCurrency('GBP').subscribe((data) => {
+      this.initCoin = new Object(data);
+      this.initPound = this.initCoin.rates.BRL.toFixed(2)
+    })
   }
 
   //Função Api //

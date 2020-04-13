@@ -4,22 +4,27 @@
 
     <nav class="coin-block">
       <a id='dollar' href="#dollar" class="choose-coins" (click)="onDollar($event)">
+        <p>{{initDollar}}</p>
         <img class="country" src="../../assets/usa.png" alt="Dollar">
       </a>
 
       <a id='australianDollar' href='#australianDollar' class="choose-coins" (click)="onAustralianDollar($event)">
+        <p>{{initAustralianDollar}}</p>
         <img class="country" src="../../assets/australia.png" alt="Australian Dollar">
       </a>
 
       <a id='canadianDollar' href='#canadianDollar' class="choose-coins" (click)="onCanadianDollar($event)">
+        <p>{{initCanadianDollar}}</p>
         <img class="country" src="../../assets/canada.png" alt="Canadian Dollar">
       </a>
 
       <a id='euro' href='#euro' class="choose-coins" (click)="onEuro($event)">
+        <p>{{initEuro}}</p>
         <img class="country" src="../../assets/euro.png" alt="Euro">
       </a>
 
       <a id='pound' href='#pound' class="choose-coins" (click)="onPound($event)">
+        <p>{{initPound}}</p>
         <img class="country" src="../../assets/uk.png" alt="Pound">
       </a>
     </nav>
